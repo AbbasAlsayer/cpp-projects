@@ -1,18 +1,20 @@
  #include <iostream>
  #include <string>
+ #include <cmath>
  using namespace std;
 
- void ReadNumber(float& A, float& B)
+ void ReadNumber(float& A, float& D)
  {
-    cout << "enter number 1? \n";
+    cout << "enter rectangle side A \n";
     cin >> A;
 
-    cout << "enter number 2? \n";
-    cin >> B;  
+    cout << "enter rectangle diagonal D \n";
+    cin >> D;  
  }
- float CaculateArea(float A, float B)
+ float CaculateArea(float A, float D)
  {
-    return A*B;
+   float Area = A * sqrt(pow(D, 2)-pow(A, 2));
+    return Area;
  }
  void PrintResults(float Area)
  {
@@ -20,9 +22,9 @@
  }
  int main()
  {
-    float A, B;
-    ReadNumber(A, B);
-    PrintResults(CaculateArea(A, B));
+    float A, D;
+    ReadNumber(A, D);
+    PrintResults(CaculateArea(A, D));
 
     return 0;
  }
